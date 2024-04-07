@@ -39,7 +39,6 @@ public class Lunarium implements ModInitializer {
         LOGGER.info("Initializing Lunarium");
 
         // Tools must be registered before items
-        ReflectionExecutor.RegisterItems();
         ReflectionExecutor.RegisterAuto();
 
         // Register Item Group

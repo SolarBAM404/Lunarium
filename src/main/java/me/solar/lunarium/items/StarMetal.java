@@ -1,19 +1,24 @@
 package me.solar.lunarium.items;
 
-import me.solar.lunarium.utils.LunariumItem;
+import me.solar.lunarium.utils.autos.IAutoRegister;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class StarMetal extends LunariumItem {
+import static net.minecraft.registry.Registries.ITEM;
 
-    private static StarMetal INSTANCE = new StarMetal();
+public class StarMetal extends Item implements IAutoRegister {
+
+    public static final StarMetal INSTANCE = new StarMetal();
     private static Logger LOGGER = LogManager.getLogger();
 
     private static final String ID = "star_metal";
@@ -39,7 +44,12 @@ public class StarMetal extends LunariumItem {
     }
 
     @Override
-    protected String getId() {
+    public <T extends IAutoRegister> void register() {
+        Registry.register(ITEM, new Identifier("lunarium", getId()), this);
+    }
+
+    @Override
+    public String getId() {
         return "star_metal";
     }
 }

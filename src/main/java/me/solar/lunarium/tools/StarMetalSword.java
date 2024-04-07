@@ -27,7 +27,6 @@ public class StarMetalSword extends SwordItem implements IAutoRegister {
     @Override
     public <T extends IAutoRegister> void register() {
         Registry.register(Registries.ITEM, new Identifier("lunarium", getId()), this);
-        Lunarium.registerItem(this);
     }
 
     public String getId() {
