@@ -1,0 +1,139 @@
+{
+	"credit": "Made with Blockbench",
+	"texture_size": [32, 32],
+	"textures": {
+		"0": "lunarium:item/star_metal_sword_blade",
+		"1": "lunarium:item/star_metal_sword_handle",
+		"particle": "lunarium:item/star_metal_sword_blade"
+	},
+	"elements": [
+		{
+			"name": "base-hilt",
+			"from": [10.62044, -4.09181, 7],
+			"to": [15.62044, 0.90819, 10],
+			"rotation": {"angle": 22.5, "axis": "z", "origin": [7.12044, 2.40819, 8.5]},
+			"faces": {
+				"north": {"uv": [0, 0, 2.5, 2.5], "texture": "#1"},
+				"east": {"uv": [1.5, 5, 3, 7.5], "texture": "#1"},
+				"south": {"uv": [0, 2.5, 2.5, 5], "texture": "#1"},
+				"west": {"uv": [3, 5, 4.5, 7.5], "texture": "#1"},
+				"up": {"uv": [7.5, 4.5, 5, 3], "texture": "#1"},
+				"down": {"uv": [7, 5, 4.5, 6.5], "texture": "#1"}
+			}
+		},
+		{
+			"name": "handle-top-hilt",
+			"from": [10.62044, 5.90819, 7],
+			"to": [15.62044, 10.90819, 10],
+			"rotation": {"angle": 22.5, "axis": "z", "origin": [7.12044, 2.40819, 8.5]},
+			"faces": {
+				"north": {"uv": [2.5, 0, 5, 2.5], "texture": "#1"},
+				"east": {"uv": [6.5, 0, 8, 2.5], "texture": "#1"},
+				"south": {"uv": [2.5, 2.5, 5, 5], "texture": "#1"},
+				"west": {"uv": [4.5, 6.5, 6, 9], "texture": "#1"},
+				"up": {"uv": [8.5, 8, 6, 6.5], "texture": "#1"},
+				"down": {"uv": [9.5, 4.5, 7, 6], "texture": "#1"}
+			}
+		},
+		{
+			"name": "handle-hilt",
+			"from": [12, -2, 7.5],
+			"to": [15, 3.5, 9.5],
+			"rotation": {"angle": 22.5, "axis": "z", "origin": [0, 0, 0]},
+			"faces": {
+				"north": {"uv": [0, 5, 1.5, 8], "texture": "#1"},
+				"east": {"uv": [1.5, 7.5, 2.5, 10.5], "texture": "#1"},
+				"south": {"uv": [5, 0, 6.5, 3], "texture": "#1"},
+				"west": {"uv": [2.5, 7.5, 3.5, 10.5], "texture": "#1"},
+				"up": {"uv": [9, 3.5, 7.5, 2.5], "texture": "#1"},
+				"down": {"uv": [9, 3.5, 7.5, 4.5], "texture": "#1"}
+			}
+		},
+		{
+			"from": [12, 8, 7.5],
+			"to": [13, 32, 9.5],
+			"rotation": {"angle": 22.5, "axis": "z", "origin": [0, 0, 0]},
+			"faces": {
+				"north": {"uv": [6, 0, 6.5, 12], "texture": "#0"},
+				"east": {"uv": [0, 0, 1, 12], "texture": "#0"},
+				"south": {"uv": [6.5, 0, 7, 12], "texture": "#0"},
+				"west": {"uv": [1, 0, 2, 12], "texture": "#0"},
+				"up": {"uv": [9.5, 1, 9, 0], "texture": "#0"},
+				"down": {"uv": [9.5, 1, 9, 2], "texture": "#0"}
+			}
+		},
+		{
+			"from": [13, 8, 7.5],
+			"to": [14, 30, 9.5],
+			"rotation": {"angle": 22.5, "axis": "z", "origin": [0, 0, 0]},
+			"faces": {
+				"north": {"uv": [7, 0, 7.5, 11], "texture": "#0"},
+				"east": {"uv": [2, 0, 3, 11], "texture": "#0"},
+				"south": {"uv": [7.5, 0, 8, 11], "texture": "#0"},
+				"west": {"uv": [3, 0, 4, 11], "texture": "#0"},
+				"up": {"uv": [9.5, 3, 9, 2], "texture": "#0"},
+				"down": {"uv": [9.5, 3, 9, 4], "texture": "#0"}
+			}
+		},
+		{
+			"from": [14, 8, 7.5],
+			"to": [15, 28, 9.5],
+			"rotation": {"angle": 22.5, "axis": "z", "origin": [0, 0, 0]},
+			"faces": {
+				"north": {"uv": [8, 0, 8.5, 10], "texture": "#0"},
+				"east": {"uv": [4, 0, 5, 10], "texture": "#0"},
+				"south": {"uv": [8.5, 0, 9, 10], "texture": "#0"},
+				"west": {"uv": [5, 0, 6, 10], "texture": "#0"},
+				"up": {"uv": [9.5, 5, 9, 4], "texture": "#0"},
+				"down": {"uv": [9.5, 5, 9, 6], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [66, 90, -90],
+			"translation": [-0.5, 0.5, 2.75],
+			"scale": [0.67, 0.66, 0.88]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [-16.75, -89.25, 0],
+			"translation": [0.5, 1.75, 2.5]
+		},
+		"firstperson_righthand": {
+			"rotation": [43.42, 83.43, -90.73],
+			"translation": [0, 1.5, 1]
+		},
+		"firstperson_lefthand": {
+			"rotation": [-127.73, -88, -77.78],
+			"translation": [2, 1.25, 0]
+		},
+		"ground": {
+			"rotation": [1.67, -77.87, -63.79],
+			"translation": [-0.25, 6.25, 0],
+			"scale": [0.75, 0.75, 0.75]
+		},
+		"gui": {
+			"rotation": [-180, 3, -171.75],
+			"translation": [0, -3.5, 0],
+			"scale": [0.35547, 0.40625, 1]
+		},
+		"fixed": {
+			"translation": [0, -4, 0],
+			"scale": [0.77, 0.51852, 1]
+		}
+	},
+	"groups": [
+		{
+			"name": "hilt",
+			"origin": [7.12044, 2.40819, 8.5],
+			"color": 0,
+			"children": [0, 1, 2]
+		},
+		{
+			"name": "Blade",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"children": [3, 4, 5]
+		}
+	]
+}

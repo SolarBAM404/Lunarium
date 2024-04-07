@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "lunarium",
+  "version": "${version}",
+
+  "name": "Lunarium",
+  "description": " Harness the power of the night sky with StarMetal ingots in this celestial-themed mod.",
+  "authors": [],
+  "contact": {},
+
+  "license": "LGPL-3.0",
+  "icon": "assets/lunarium/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "me.solar.lunarium.Lunarium"
+    ],
+    "client": [
+      "me.solar.lunarium.client.LunariumClient"
+    ]
+  },
+
+      "mixins": [
+        "lunarium.mixins.json"
+      ],
+
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+        "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
