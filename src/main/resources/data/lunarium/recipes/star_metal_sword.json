@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WWW",
+    "WR ",
+    "WWW"
+  ],
+  "key": {
+    "R": {
+      "item": "minecraft:stick"
+    },
+    "W": {
+      "item": "lunarium:star_metal"
+    }
+  },
+  "result": {
+    "item": "lunarium:star_metal_sword",
+    "count": 1
+  }
+
+}

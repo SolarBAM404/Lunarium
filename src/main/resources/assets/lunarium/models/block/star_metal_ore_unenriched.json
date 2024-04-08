@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "lunarium:block/star_metal_ore_unenriched"
+  }
+}

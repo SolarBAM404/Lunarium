@@ -16,11 +16,21 @@ public class ReflectionExecutor {
 
         for (Class<? extends IAutoRegister> derivedClass : derivedClasses) {
             IAutoRegister autoRegister;
+
+            if (derivedClass.isEnum()) {
+                IAutoRegister[] constants = derivedClass.getEnumConstants();
+                for (IAutoRegister constant : constants) {
+                    constant.register();
+                }
+                continue;
+            }
+
             try {
                 autoRegister = (IAutoRegister) derivedClass.getDeclaredField("INSTANCE").get(null);
             } catch (IllegalAccessException | NoSuchFieldException e) {
                 throw new RuntimeException(e);
             }
+
             autoRegister.register();
 
             if (autoRegister instanceof Item) {

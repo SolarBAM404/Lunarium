@@ -1,3 +1,6 @@
 {
-    "item.lunarium.star_metal_sword": "Star Metal Sword"
+    "item.lunarium.star_metal": "Star Metal",
+    "item.lunarium.star_metal_sword": "Star Metal Sword",
+
+    "block.lunarium.star_metal_ore": "Star Metal Ore"
 }
