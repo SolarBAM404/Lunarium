@@ -11,31 +11,51 @@ import java.util.Set;
 public class ReflectionExecutor {
 
     public static void RegisterAuto() {
-        Reflections reflections = new Reflections("me.solar.lunarium");
-        Set<Class<? extends IAutoRegister>> derivedClasses = reflections.getSubTypesOf(IAutoRegister.class);
+        Reflections reflection;
 
-        for (Class<? extends IAutoRegister> derivedClass : derivedClasses) {
-            IAutoRegister autoRegister;
+        for (ReflectionsValue reflectionPrefix : ReflectionsValue.values()) {
+            reflection = new Reflections(reflectionPrefix.getPackageName());
+            Set<Class<? extends IAutoRegister>> derivedClasses = reflection.getSubTypesOf(IAutoRegister.class);
 
-            if (derivedClass.isEnum()) {
-                IAutoRegister[] constants = derivedClass.getEnumConstants();
-                for (IAutoRegister constant : constants) {
-                    constant.register();
+            for (Class<? extends IAutoRegister> derivedClass : derivedClasses) {
+                IAutoRegister autoRegister;
+
+                if (derivedClass.isEnum()) {
+                    IAutoRegister[] constants = derivedClass.getEnumConstants();
+                    for (IAutoRegister constant : constants) {
+                        constant.register();
+                    }
+                    continue;
                 }
-                continue;
-            }
 
-            try {
-                autoRegister = (IAutoRegister) derivedClass.getDeclaredField("INSTANCE").get(null);
-            } catch (IllegalAccessException | NoSuchFieldException e) {
-                throw new RuntimeException(e);
-            }
+                try {
+                    autoRegister = (IAutoRegister) derivedClass.getDeclaredField("INSTANCE").get(null);
+                } catch (IllegalAccessException | NoSuchFieldException e) {
+                    throw new RuntimeException(e);
+                }
 
-            autoRegister.register();
+                autoRegister.register();
 
-            if (autoRegister instanceof Item) {
-                Lunarium.registerItem((Item) autoRegister);
+                if (autoRegister instanceof Item) {
+                    Lunarium.registerItem((Item) autoRegister);
+                }
             }
+        }
+    }
+
+    public enum ReflectionsValue {
+        Items("me.solar.lunarium.items"),
+        Blocks("me.solar.lunarium.blocks"),
+        Tools("me.solar.lunarium.tools");
+
+        private final String packageName;
+
+        ReflectionsValue(String packageName) {
+            this.packageName = packageName;
+        }
+
+        public String getPackageName() {
+            return packageName;
         }
     }
 
