@@ -1,17 +1,33 @@
 {
-  "type": "minecraft:block",
   "pools": [
     {
       "rolls": 1,
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "lunarium:star_metal_ore"
-        }
-      ],
-      "conditions": [
+          "name": "lunarium:star_metal_ore_enriched",
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "lunarium:star_metal_ore",
+              "properties": {
+                "enriched": "true"
+              }
+            }
+          ]
+        },
         {
-          "condition": "minecraft:survives_explosion"
+          "type": "minecraft:item",
+          "name": "lunarium:star_metal_ore",
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "lunarium:star_metal_ore",
+              "properties": {
+                "enriched": "false"
+              }
+            }
+          ]
         }
       ]
     }

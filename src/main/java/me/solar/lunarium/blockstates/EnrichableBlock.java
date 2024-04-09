@@ -1,13 +1,11 @@
 package me.solar.lunarium.blockstates;
 
-import me.solar.lunarium.blocks.OreManager;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.loot.context.LootContextParameterSet;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
@@ -15,9 +13,6 @@ import net.minecraft.state.property.IntProperty;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.WorldView;
-
-import java.util.Collections;
-import java.util.List;
 
 public class EnrichableBlock extends Block {
     public static final IntProperty STAR_POWER = IntProperty.of("star_power", 0, 6000);
@@ -42,12 +37,6 @@ public class EnrichableBlock extends Block {
     @Override
     public ItemStack getPickStack(WorldView world, BlockPos pos, BlockState state) {
         return new ItemStack(state.get(ENRICHED) ? enrichedItem : unenrichedItem);
-    }
-
-    @Override
-    public List<ItemStack> getDroppedStacks(BlockState state, LootContextParameterSet.Builder builder) {
-        EnrichableBlock block = (EnrichableBlock) OreManager.STAR_METAL_ORE.getBlock();
-        return Collections.singletonList(new ItemStack(state.get(ENRICHED) ? block.enrichedItem : block.unenrichedItem));
     }
 
     @Override

@@ -33,19 +33,33 @@ public class Lunarium implements ModInitializer {
             })
             .build();
 
+    public static void registerItem(Item item) {
+        ITEMS.add(item);
+    }
+
     @Override
     public void onInitialize() {
         Configurator.setLevel(LOGGER.getName(), Level.DEBUG);
         LOGGER.info("Initializing Lunarium");
 
         // Tools must be registered before items
-        ReflectionExecutor.RegisterAuto();
+        registerEnrichableBlocks();
+        ReflectionExecutor.registerAuto();
+        registerPlacedFeatures();
 
         // Register Item Group
         Registry.register(Registries.ITEM_GROUP, new Identifier("lunarium", "item_group"), ITEM_GROUP);
     }
 
-    public static void registerItem(Item item) {
-        ITEMS.add(item);
+    private void registerEnrichableBlocks() {
+        for (EnrichableBlocks enrichableBlock : EnrichableBlocks.values()) {
+            enrichableBlock.register();
+        }
+    }
+
+    private void registerPlacedFeatures() {
+        for (PlacedFeatures placedFeature : PlacedFeatures.values()) {
+            placedFeature.register();
+        }
     }
 }
