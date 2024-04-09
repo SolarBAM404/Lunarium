@@ -5,12 +5,11 @@ import me.solar.lunarium.utils.autos.IAutoRegister;
 import net.minecraft.item.Item;
 import org.reflections.Reflections;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Set;
 
 public class ReflectionExecutor {
 
-    public static void RegisterAuto() {
+    public static void registerAuto() {
         Reflections reflection;
 
         for (ReflectionsValue reflectionPrefix : ReflectionsValue.values()) {
@@ -36,8 +35,8 @@ public class ReflectionExecutor {
 
                 autoRegister.register();
 
-                if (autoRegister instanceof Item) {
-                    Lunarium.registerItem((Item) autoRegister);
+                if (autoRegister instanceof Item item) {
+                    Lunarium.registerItem(item);
                 }
             }
         }
@@ -45,7 +44,7 @@ public class ReflectionExecutor {
 
     public enum ReflectionsValue {
         Items("me.solar.lunarium.items"),
-        Blocks("me.solar.lunarium.blocks"),
+        //        Blocks("me.solar.lunarium.blocks"),
         Tools("me.solar.lunarium.tools");
 
         private final String packageName;
