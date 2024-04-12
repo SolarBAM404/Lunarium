@@ -44,8 +44,8 @@ public class Lunarium implements ModInitializer {
 
         // Tools must be registered before items
         registerEnrichableBlocks();
-        ReflectionExecutor.registerAuto();
         registerPlacedFeatures();
+        ReflectionExecutor.registerAuto();
 
         // Register Item Group
         Registry.register(Registries.ITEM_GROUP, new Identifier("lunarium", "item_group"), ITEM_GROUP);
