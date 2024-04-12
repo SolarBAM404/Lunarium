@@ -3,7 +3,6 @@ package me.solar.lunarium.blockstates;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
@@ -15,16 +14,17 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.WorldView;
 
 public class EnrichableBlock extends Block {
-    public static final IntProperty STAR_POWER = IntProperty.of("star_power", 0, 6000);
+    public static final IntProperty STAR_POWER = IntProperty.of("star_power", 0, 10);
     public static final BooleanProperty ENRICHED = BooleanProperty.of("enriched");
 
-    public static final EnrichableBlock ENRICHABLE_BLOCK = new EnrichableBlock(FabricBlockSettings.copyOf(Blocks.STONE).requiresTool());
+    public static final EnrichableBlock ENRICHABLE_BLOCK =
+            new EnrichableBlock(FabricBlockSettings.create().requiresTool().ticksRandomly());
 
     private Item unenrichedItem;
     private Item enrichedItem;
 
     private EnrichableBlock(Settings settings) {
-        super(settings.ticksRandomly());
+        super(settings);
         setDefaultState(getDefaultState().with(ENRICHED, false));
     }
 
