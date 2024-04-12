@@ -29,6 +29,6 @@ public enum PlacedFeatures {
     }
 
     public void register() {
-        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, key);
+        BiomeModifications.addFeature(selector, feature, key);
     }
 }
